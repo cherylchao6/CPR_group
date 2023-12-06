@@ -3,17 +3,19 @@
 #define BUFFER_SIZE 80
 #include "converting.h"
 
-
-void converting(void) {
+void converting(void)
+{
 	// V1
 	printf("*** start of Converting Strings to int Demo ***\n");
-	char	intString[BUFFER_SIZE];
-	int		intNumber;
-	do {
+	char intString[BUFFER_SIZE];
+	int intNumber;
+	do
+	{
 		printf("Type an int numberic string (q - to quit) : \n");
 		fgets(intString, BUFFER_SIZE, stdin);
 		intString[strlen(intString) - 1] = '\0';
-		if (strcmp(intString, "q") != 0) {
+		if (strcmp(intString, "q") != 0)
+		{
 			intNumber = atoi(intString);
 			printf("Converted number is %d\n", intNumber);
 		}
@@ -22,18 +24,35 @@ void converting(void) {
 
 	// V2
 	printf("*** Start of Converting Strings to double Demo ***\n");
-	char	doubleString[BUFFER_SIZE];
-	double	doubleNumber;
-	do {
+	char doubleString[BUFFER_SIZE];
+	double doubleNumber;
+	do
+	{
 		printf("Type the double numberic string (q - to quit):\n");
 		fgets(doubleString, BUFFER_SIZE, stdin);
 		doubleString[strlen(doubleString) - 1] = '\0';
-		if ((strcmp(doubleString, "q") != 0)) {
+		if ((strcmp(doubleString, "q") != 0))
+		{
 			doubleNumber = atof(doubleString);
-			printf("Coverted number id %f\n", doubleNumber); 
+			printf("Coverted number id %f\n", doubleNumber);
 		}
 	} while (strcmp(doubleString, "q") != 0);
 	printf("*** End of Converting Strings to double Demo ***\n\n");
 
+	// V3
+	printf("*** Start of converting strings to long demo ***\n");
+	char longString[BUFFER_SIZE];
+	long longNumber;
+	do
+	{
+		printf("Type the long numeric string (q - to quit):\n");
+		fgets(longString, BUFFER_SIZE, stdin);
+		longString[strlen(longString) - 1] = '\0';
+		if ((strcmp(longString, "q") != 0))
+		{
+			longNumber = atol(longString);
+			printf("Coverting number is %ld\n", longNumber);
+		}
+	} while (strcmp(longString, "q") != 0);
+	printf("*** End of converting strings to long demo ***\n\n");
 }
-
